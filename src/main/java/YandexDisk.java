@@ -20,19 +20,19 @@ public class YandexDisk extends AbstractPage {
     @FindBy(xpath = "//a[@class='_nb-popup-close js-dialog-close']")
     WebElement closePopup;
 
-    @FindBy(xpath = "//a[@href='https://disk.yandex.by/?source=tab-mail&force_show=1']")
+    @FindBy(xpath = "//a[contains(@href,'https://disk.yandex.by')]")
     WebElement openDisk;
 
-    @FindBy(xpath = "//div[@data-metrika-dblclick='count'][3]")
+    @FindBy(xpath = "//div[@class='ns-view-container-desc']//img[contains(@class,'resource')]")
     WebElement picture;
 
     @FindBy(xpath = "//div[@id='nb-3']")
     WebElement bin;
 
-    @FindBy(xpath = "//button//span[@class='ui-button-text']")
+    @FindBy(xpath = "//button[contains(@data-click-action,'openFolder')]")
     WebElement buttonOpenBin;
 
-    @FindBy(xpath = "//button[@data-metrika-params='actions,with resources,restore,file']")
+    @FindBy(xpath = "//button[contains(@data-click-action,'resource.restore')]")
     WebElement buttonRestore;
 
     @FindBy(xpath = "//div[@class='item-details']//span[@class='item-details__content']")
@@ -85,6 +85,10 @@ public class YandexDisk extends AbstractPage {
     public void assertPictureAppeared(){
         wait.until(ExpectedConditions.elementToBeClickable(picture));
         Assert.assertTrue(picture.isDisplayed());
+    }
+
+    public void clickPicture(){
+        picture.click();
     }
 
     public void clickRestoreButton(){

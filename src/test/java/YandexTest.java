@@ -23,6 +23,7 @@ public class YandexTest extends BaseTest {
         disk.clickBin();
         disk.clickOpenBinButton();
         disk.assertPictureAppeared();
+        disk.clickPicture();
         disk.clickRestoreButton();
         disk.assertBinIsEmpty();
         disk.returnToDisk();

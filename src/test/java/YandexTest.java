@@ -13,8 +13,13 @@ public class YandexTest extends BaseTest {
         yandex.sendKeysLogin("maria1.tester");
         yandex.sendKeysPassword("Password1");
         yandex.clickSubmitButton();
+
+        YandexDisk disk = new YandexDisk(driver);
+        disk.clickDisk();
+        disk.movePictureIntoBin();
     }
 
    // @Test(dependsOnMethods = { "search" }, alwaysRun = true)
+
 
 }

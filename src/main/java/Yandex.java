@@ -13,7 +13,7 @@ public class Yandex {
     WebDriver driver;
     WebDriverWait wait;
 
-     @FindBy(xpath = "//input[@name='login']")
+    @FindBy(xpath = "//input[@name='login']")
     WebElement login;
 
     @FindBy(xpath = "//input[@name='passwd']")

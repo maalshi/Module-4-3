@@ -16,7 +16,17 @@ public class YandexTest extends BaseTest {
 
         YandexDisk disk = new YandexDisk(driver);
         disk.clickDisk();
+        disk.openTheDisk();
+        disk.assertPictureAppeared();
         disk.movePictureIntoBin();
+//        disk.assertPictureDisappeared();
+        disk.clickBin();
+        disk.clickOpenBinButton();
+        disk.assertPictureAppeared();
+        disk.clickRestoreButton();
+        disk.assertBinIsEmpty();
+        disk.returnToDisk();
+        disk.assertPictureAppeared();
     }
 
    // @Test(dependsOnMethods = { "search" }, alwaysRun = true)

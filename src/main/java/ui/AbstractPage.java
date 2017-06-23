@@ -1,19 +1,28 @@
 package ui;
 
+import com.thoughtworks.selenium.Wait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import javax.swing.*;
+import javax.xml.bind.Element;
 
 public abstract class AbstractPage{
 
     protected WebDriver driver;
-//    protected WebDriverWait wait = new WebDriverWait(driver, 20);
+    protected WebDriverWait wait = new WebDriverWait(driver, 20);
 
     public void dragAndDrop(WebElement toBeDragged, WebElement target){
         new Actions(driver).dragAndDrop(toBeDragged, target).build().perform();
+    }
+
+    public void waitElement (WebElement element){
+        wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public void jsClick(WebElement element){

@@ -2,6 +2,7 @@ package ui.aerlpages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.AbstractPage;
@@ -34,7 +35,7 @@ public class Homepage extends AbstractPage {
     }
 
     public void clickOrigin(){
-        wait.until(ExpectedConditions.elementToBeClickable(origin));
+        super.waitElement((WebElement) origin);
         driver.findElement(origin).click();
     }
 
@@ -64,7 +65,7 @@ public class Homepage extends AbstractPage {
 
     public void clickFindFlightButton(){
         wait.until(ExpectedConditions.elementToBeClickable(findFlightButton));
-        highlightElement(findFlightButton);
+        super.waitHighlightAndClickElement(findFlightButton);
         driver.findElement(findFlightButton).click();
 
     }

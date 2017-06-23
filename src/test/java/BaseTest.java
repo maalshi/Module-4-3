@@ -12,7 +12,7 @@ public class BaseTest {
 
     @BeforeClass
     public void initDriver(){
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Maryia_Shynkarenka\\geckodriver-v0.16.1-win64\\geckodriver.exe");
+      //  System.setProperty("webdriver.gecko.driver", "C:\\Users\\Maryia_Shynkarenka\\geckodriver-v0.16.1-win64\\geckodriver.exe");
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
     }

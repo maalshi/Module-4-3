@@ -7,9 +7,10 @@ import ui.aerlpages.Homepage;
  */
 public class FlightTest extends BaseTest {
 
+
     @Test
        public void search(){
-   //     driver.get("https://www.aerlingus.com/html/en-US/home.html");
+        driver.get("https://www.aerlingus.com/html/en-US/home.html");
         Homepage homepage = new Homepage(driver);
         homepage.clickOrigin();
         homepage.sendKeysOrigin("dublin");

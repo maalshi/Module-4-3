@@ -13,8 +13,6 @@ import ui.AbstractPage;
  */
 public class Homepage extends AbstractPage {
 
-    WebDriverWait wait;
-
     By origin = By.xpath("//*[@id='origin']/div");
     By suggestion = By.xpath("//li[contains(@id,'typeahead')]");
     By destination = By.xpath("//*[@id='dest']/div");
@@ -35,7 +33,7 @@ public class Homepage extends AbstractPage {
     }
 
     public void clickOrigin(){
-        super.waitElement((WebElement) origin);
+        super.waitElement(origin);
         driver.findElement(origin).click();
     }
 

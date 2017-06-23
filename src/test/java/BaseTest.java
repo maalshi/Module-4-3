@@ -10,6 +10,7 @@ public class BaseTest {
 
     protected WebDriver driver;
 
+
     @BeforeClass
     public void initDriver(){
       //  System.setProperty("webdriver.gecko.driver", "C:\\Users\\Maryia_Shynkarenka\\geckodriver-v0.16.1-win64\\geckodriver.exe");

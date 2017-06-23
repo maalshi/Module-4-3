@@ -15,7 +15,9 @@ import javax.xml.bind.Element;
 public abstract class AbstractPage{
 
     protected WebDriver driver;
-    protected WebDriverWait wait = new WebDriverWait(driver, 20);
+    protected WebDriverWait wait;
+
+
 
     public void dragAndDrop(WebElement toBeDragged, WebElement target){
         new Actions(driver).dragAndDrop(toBeDragged, target).build().perform();
@@ -23,6 +25,10 @@ public abstract class AbstractPage{
 
     public void waitElement (WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public void waitElement (By locator){
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(locator)));
     }
 
     public void jsClick(WebElement element){
@@ -34,6 +40,10 @@ public abstract class AbstractPage{
 
     public void waitHighlightAndClickElement(WebElement element){
         ((JavascriptExecutor)driver).executeScript("arguments[0].style.backgroundColor='red'", element);
+    }
+
+    public void waitForElementInvisible(By locator){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 }
 

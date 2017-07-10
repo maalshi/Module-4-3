@@ -2,15 +2,9 @@ package ui.aerlpages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.AbstractPage;
 
-
-/**
- * Created by Maryia_Shynkarenka on 6/7/2017.
- */
 public class Homepage extends AbstractPage {
 
     By origin = By.xpath("//*[@id='origin']/div");
@@ -24,8 +18,6 @@ public class Homepage extends AbstractPage {
 
     By tabCarHire = By.xpath("//*[contains(@id,'partner-tab') and contains(.,'CAR')]");
     By buttonMoreInfo = By.id("car-rental-link-1");
-
-
 
     public Homepage(WebDriver driver) {
         this.driver = driver;
@@ -62,36 +54,33 @@ public class Homepage extends AbstractPage {
     }
 
     public void clickFindFlightButton(){
-        wait.until(ExpectedConditions.elementToBeClickable(findFlightButton));
+        waitElement(findFlightButton);
         super.waitHighlightAndClickElement(findFlightButton);
         driver.findElement(findFlightButton).click();
 
     }
 
-
     public void clickTabHotel(){
-        wait.until(ExpectedConditions.elementToBeClickable(tabHotel));
+        waitElement(tabHotel);
         driver.findElement(tabHotel).click();
 
     }
 
     public void clickButtonViewHotels(){
-        wait.until(ExpectedConditions.elementToBeClickable(buttonViewHotels));
+        waitElement(buttonViewHotels);
         driver.findElement(buttonViewHotels).click();
 
     }
 
-
     public void clickTabCarHire(){
-        wait.until(ExpectedConditions.elementToBeClickable(tabCarHire));
+        waitElement(tabCarHire);
         driver.findElement(tabCarHire).click();
 
     }
 
     public void clickButtonMoreInfo(){
-        wait.until(ExpectedConditions.elementToBeClickable(buttonMoreInfo));
+        waitElement(buttonMoreInfo);
         driver.findElement(buttonMoreInfo).click();
 
     }
-
 }

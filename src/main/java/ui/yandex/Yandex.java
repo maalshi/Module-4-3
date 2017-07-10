@@ -4,13 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ui.AbstractPage;
 
 /**
  * Created by Maryia_Shynkarenka on 6/21/2017.
  */
-public class Yandex {
+public class Yandex extends AbstractPage {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -38,7 +38,7 @@ public class Yandex {
 
 
     public void sendKeysLogin(String user_login){
-        wait.until(ExpectedConditions.elementToBeClickable(login));
+        waitElement(login);
         login.sendKeys(user_login);
     }
 

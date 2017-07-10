@@ -2,14 +2,14 @@ package ui.HotelPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import ui.AbstractPage;
 
 /**
  * Created by Maryia_Shynkarenka on 6/14/2017.
  */
-public class PlanPage {
+public class PlanPage extends AbstractPage {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -22,7 +22,7 @@ public class PlanPage {
     }
 
     public void assertTextBookFlights(){
-        wait.until(ExpectedConditions.elementToBeClickable(textBookFlights));
+        waitElement(textBookFlights);
         Assert.assertEquals("Book Flights", driver.findElement(textBookFlights).getText());
 
     }

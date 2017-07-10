@@ -65,7 +65,7 @@ public class YandexDisk extends AbstractPage {
     }
 
     public WebElement getRandomPicture(){
-        wait.until(ExpectedConditions.elementToBeClickable(picturesLocator));
+        waitElement(picturesLocator);
         return pictures.get(new Random().nextInt(pictures.size()));
     }
 
@@ -78,13 +78,13 @@ public class YandexDisk extends AbstractPage {
     }
 
     public YandexDisk clickDisk(){
-        wait.until(ExpectedConditions.elementToBeClickable(disk));
+        waitElement(disk);
         disk.click();
         return this;
     }
 
     public YandexDisk openTheDisk(){
-        wait.until(ExpectedConditions.elementToBeClickable(openDisk));
+        waitElement(openDisk);
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", openDisk);
         return this;
     }
@@ -92,40 +92,40 @@ public class YandexDisk extends AbstractPage {
 
     public YandexDisk movePictureIntoBin(WebElement picture){
         super.dragAndDrop(picture, bin);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='notifications__text js-message']")));
+        waitElement(By.xpath("//div[@class='notifications__text js-message']")));
         return this;
     }
 
     public YandexDisk clickBin(){
-        wait.until(ExpectedConditions.elementToBeClickable(bin));
+        waitElement(bin);
         bin.click();
         return this;
     }
 
     public YandexDisk clickOpenBinButton(){
-        wait.until(ExpectedConditions.elementToBeClickable(buttonOpenBin));
+        waitElement(buttonOpenBin);
         super.jsClick(buttonOpenBin);
-        wait.until(ExpectedConditions.elementToBeClickable(navBin));
+        waitElement(navBin);
         return this;
     }
 
     public YandexDisk clickRestoreButton(){
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='notifications__text js-message']")));
-        wait.until(ExpectedConditions.elementToBeClickable(buttonRestore));
+        waitForElementInvisible(By.xpath("//div[@class='notifications__text js-message']"));
+        waitElement(buttonRestore);
         buttonRestore.click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='notifications__text js-message']")));
+        waitElement(By.xpath("//div[@class='notifications__text js-message']"));
         return this;
     }
 
     public YandexDisk returnToDisk(){
-        wait.until(ExpectedConditions.elementToBeClickable(diskReturn));
+        waitElement(diskReturn);
         diskReturn.click();
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[@class='crumbs__current' and text()='Корзина']")));
+        waitForElementInvisible(By.xpath("//span[@class='crumbs__current' and text()='Корзина']"));
         return this;
     }
 
     public YandexDisk tickCheckBox(){
-        wait.until(ExpectedConditions.elementToBeClickable(picturesLocator));
+        waitElement(picturesLocator));
         Actions action = new Actions(driver);
         action.moveToElement(driver.findElement(picturesLocator)).click(pictureCheckBox).perform();
         return this;

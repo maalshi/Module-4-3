@@ -7,11 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import ui.AbstractPage;
 
 /**
  * Created by Maryia_Shynkarenka on 6/19/2017.
  */
-public class CarHireResults {
+public class CarHireResults extends AbstractPage{
 
     WebDriver driver;
     WebDriverWait wait;
@@ -36,12 +37,12 @@ public class CarHireResults {
     }
 
     public void assertOutboundAirport(String outbound){
-        wait.until(ExpectedConditions.elementToBeClickable(outboundAirport));
+        waitElement(outboundAirport);
         Assert.assertEquals(outbound, outboundAirport.getText());
     }
 
     public void assertInboundAirport(String inbound){
-        wait.until(ExpectedConditions.elementToBeClickable(inboundAirport));
+        waitElement(inboundAirport););
         Assert.assertEquals(inbound, inboundAirport.getText());
     }
 }

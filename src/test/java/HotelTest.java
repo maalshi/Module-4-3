@@ -25,7 +25,6 @@ public class HotelTest extends BaseTest {
     @Test(dependsOnMethods = {"verifyHotels"}, alwaysRun = true)
     public void assertText() {
         HotelPage hotelPage = new HotelPage(driver);
-        //  hotelPage.assertHotelsText();
         hotelPage.assertNewHotelsPartnerText();
         hotelPage.assertWerePartneringText();
         hotelPage.assertWereChangingText();

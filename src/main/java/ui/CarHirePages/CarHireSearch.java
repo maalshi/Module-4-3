@@ -45,7 +45,6 @@ public class CarHireSearch extends AbstractPage {
     }
 
     public void sendKeysPickUpLocation(String city){
-
         waitElement(pickUpField);
         pickUpField.sendKeys(city);
     }

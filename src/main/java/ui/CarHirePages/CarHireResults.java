@@ -29,7 +29,6 @@ public class CarHireResults extends AbstractPage{
     @FindBy(id = "pickupLocation")
     WebElement inboundDate;
 
-
     public CarHireResults(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 100);
@@ -42,7 +41,7 @@ public class CarHireResults extends AbstractPage{
     }
 
     public void assertInboundAirport(String inbound){
-        waitElement(inboundAirport););
+        waitElement(inboundAirport);
         Assert.assertEquals(inbound, inboundAirport.getText());
     }
 }

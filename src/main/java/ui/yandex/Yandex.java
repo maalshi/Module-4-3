@@ -27,15 +27,11 @@ public class Yandex extends AbstractPage {
     @FindBy(xpath = "//button[@type='submit']")
     WebElement buttonSubmit;
 
-
-
     public Yandex(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
         PageFactory.initElements(driver, this);
-
     }
-
 
     public void sendKeysLogin(String user_login){
         waitElement(login);

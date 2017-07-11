@@ -25,18 +25,13 @@ public class HotelTest extends BaseTest {
     @Test(dependsOnMethods = {"verifyHotels"}, alwaysRun = true)
     public void assertText() {
         HotelPage hotelPage = new HotelPage(driver);
-        hotelPage.assertNewHotelsPartnerText();
-        hotelPage.assertWerePartneringText();
-        hotelPage.assertWereChangingText();
+        hotelPage.verifyNewHotelsPartnerText();
+        hotelPage.verifyWerePartneringText();
+        hotelPage.verifyWereChangingText();
         hotelPage.clickButtonSearchFlights();
-    }
-
-    @Test (dependsOnMethods = {"assertText"}, alwaysRun = true)
-    public void assertPlanPage() {
         PlanPage planPage = new PlanPage(driver);
-        planPage.assertTextBookFlights();
+        planPage.verifyTextBookFlights();
     }
-
 }
 
 

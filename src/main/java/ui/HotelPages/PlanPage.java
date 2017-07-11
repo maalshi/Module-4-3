@@ -21,7 +21,7 @@ public class PlanPage extends AbstractPage {
         wait = new WebDriverWait(driver, 10);
     }
 
-    public void assertTextBookFlights(){
+    public void verifyTextBookFlights(){
         waitElement(textBookFlights);
         Assert.assertEquals("Book Flights", driver.findElement(textBookFlights).getText());
 

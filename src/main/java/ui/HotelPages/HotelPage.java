@@ -17,7 +17,6 @@ public class HotelPage extends AbstractPage {
     WebDriver driver;
     WebDriverWait wait;
 
-
     @FindBy(id = "green-search-dates-flights_IE-EUR")
     WebElement buttonSearchFlights;
 
@@ -44,17 +43,17 @@ public class HotelPage extends AbstractPage {
         Assert.assertEquals("Hotels", hotelText.getText());
     }
 
-    public void assertWereChangingText(){
-        waitElement(wereChangingText));
+    public void verifyWereChangingText(){
+        waitElement(wereChangingText);
         Assert.assertEquals("We're changing our Hotels partner", wereChangingText.getText());
     }
 
-    public void assertNewHotelsPartnerText(){
+    public void verifyNewHotelsPartnerText(){
         waitElement(newHotelPatnersText);
         Assert.assertEquals("New Hotels partner coming soon!", newHotelPatnersText.getText());
     }
 
-    public void assertWerePartneringText(){
+    public void verifyWerePartneringText(){
         waitElement(werePatneringText);
         Assert.assertEquals("We are partnering with one of the world's leading accommodation suppliers with over a million properties throughout 225 countries worldwide.You can also look forward to superior booking functionality and payment options, and customer service tailored to your needs.\n" +
                 "Flights and hotels sorted!", werePatneringText.getText());

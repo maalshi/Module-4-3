@@ -125,7 +125,7 @@ public class YandexDisk extends AbstractPage {
     }
 
     public YandexDisk tickCheckBox(){
-        waitElement(picturesLocator));
+        waitElement(picturesLocator);
         Actions action = new Actions(driver);
         action.moveToElement(driver.findElement(picturesLocator)).click(pictureCheckBox).perform();
         return this;

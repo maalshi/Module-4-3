@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.AbstractPage;
 
@@ -92,7 +91,7 @@ public class YandexDisk extends AbstractPage {
 
     public YandexDisk movePictureIntoBin(WebElement picture){
         super.dragAndDrop(picture, bin);
-        waitElement(By.xpath("//div[@class='notifications__text js-message']")));
+        waitElement(By.xpath("//div[@class='notifications__text js-message']"));
         return this;
     }
 

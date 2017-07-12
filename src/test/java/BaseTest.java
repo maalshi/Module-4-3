@@ -1,4 +1,3 @@
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -8,17 +7,14 @@ import org.testng.annotations.BeforeClass;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * Created by Maryia_Shynkarenka on 6/6/2017.
- */
 public class BaseTest {
 
-    protected WebDriver driver;
+  protected WebDriver driver;
 
 
     @BeforeClass
     public WebDriver init() {
-        //DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         try {
             if(System.getProperty("browser").equals("firefox")) {
                 driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), DesiredCapabilities.firefox());

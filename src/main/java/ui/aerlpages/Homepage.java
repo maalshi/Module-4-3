@@ -4,12 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.AbstractPage;
+import businessobjects.Route;
 
 public class Homepage extends AbstractPage {
 
-    By origin = By.xpath("//*[@id='origin']/div");
+    By originField = By.xpath("//*[@id='origin']/div");
     By suggestion = By.xpath("//li[contains(@id,'typeahead')]");
-    By destination = By.xpath("//*[@id='dest']/div");
+    By destinationField = By.xpath("//*[@id='dest']/div");
     By findFlightButton = By.xpath("//button[@data-test-id='test_booker_search']");
 
 
@@ -25,16 +26,27 @@ public class Homepage extends AbstractPage {
     }
 
     public void clickOrigin(){
-        super.waitElement(origin);
-        driver.findElement(origin).click();
+        super.waitElement(originField);
+        driver.findElement(originField).click();
     }
 
     public void clearOrigin(){
-        driver.findElement(origin).clear();
+        driver.findElement(originField).clear();
+    }
+
+    public void setRoute (Route route){
+        waitElement(originField);
+        driver.findElement(originField).clear();
+        driver.findElement(originField).sendKeys(route.getOrigin());
+        driver.findElement(suggestion).click();
+        waitElement(destinationField);
+        driver.findElement(destinationField).sendKeys(route.getDestination());
+        driver.findElement(suggestion).click();
+
     }
 
     public void sendKeysOrigin(String originCity){
-        driver.findElement(origin).sendKeys(originCity);
+        driver.findElement(originField).sendKeys(originCity);
     }
 
     public void clickOriginSuggestion(){
@@ -42,11 +54,11 @@ public class Homepage extends AbstractPage {
     }
 
     public void clickDestination(){
-        driver.findElement(destination).click();
+        driver.findElement(destinationField).click();
     }
 
     public void sendKeysDestination(String destinationCity){
-        driver.findElement(destination).sendKeys(destinationCity);
+        driver.findElement(destinationField).sendKeys(destinationCity);
     }
 
     public void clickDestinationSuggestion(){

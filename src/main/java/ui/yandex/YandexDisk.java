@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.AbstractPage;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -68,8 +69,12 @@ public class YandexDisk extends AbstractPage {
         return pictures.get(new Random().nextInt(pictures.size()));
     }
 
-    public List<WebElement> getPictures(){
-        return driver.findElements(By.xpath("//div[@class='ns-view-container-desc']//img[contains(@class,'resource')]"));
+    public List<String> getPictures(){
+        List<String> picturesUrls = new ArrayList<String>();
+        for(WebElement we: driver.findElements(By.xpath("//div[@class='ns-view-container-desc']//img[contains(@class,'resource')]"))){
+            picturesUrls.add(we.getAttribute("src"));
+        }
+        return picturesUrls;
     }
 
     public String getElementScr(WebElement picture){

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.AbstractPage;
+import businessobjects.YandexLogin;
 
 /**
  * Created by Maryia_Shynkarenka on 6/21/2017.
@@ -16,10 +17,10 @@ public class Yandex extends AbstractPage {
     WebDriverWait wait;
 
     @FindBy(xpath = "//input[@name='login']")
-    WebElement login;
+    WebElement loginField;
 
     @FindBy(xpath = "//input[@name='passwd']")
-    WebElement password;
+    WebElement passwordField;
 
     @FindBy(xpath = "//input[@class='checkbox__control']")
     WebElement alienComputerCheckbox;
@@ -33,14 +34,20 @@ public class Yandex extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void sendKeysLogin(String user_login){
-        waitElement(login);
-        login.sendKeys(user_login);
+    public void yandexLogin(YandexLogin yandexLogin){
+        waitElement(loginField);
+        loginField.sendKeys(yandexLogin.getLogin());
+        passwordField.sendKeys(yandexLogin.getPassword());
+    }
+
+   /* public void sendKeysLogin(String user_login){
+        waitElement(loginField);
+        loginField.sendKeys(user_login);
     }
 
     public void sendKeysPassword(String user_password){
-        password.sendKeys(user_password);
-    }
+        passwordField.sendKeys(user_password);
+    }*/
 
     public void clickSubmitButton(){
         buttonSubmit.click();

@@ -1,6 +1,8 @@
+import config.WebDriverSingleton;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import ui.AssertUtil;
+import utils.AssertUtil;
+import businessobjects.YandexLogin;
 import ui.yandex.Yandex;
 import ui.yandex.YandexDisk;
 
@@ -10,12 +12,14 @@ import ui.yandex.YandexDisk;
 public class YandexTest extends BaseTest {
 
 
+
     @Test
     public void trashTest() {
-        driver.get("https://ui.yandex.by");
+        driver.get("https://yandex.by");
         Yandex yandex = new Yandex(driver);
-        yandex.sendKeysLogin("maria1.tester");
-        yandex.sendKeysPassword("Password1");
+        yandex.yandexLogin(new YandexLogin("", ""));
+       // yandex.sendKeysLogin("maria1.tester");
+       // yandex.sendKeysPassword("Password1");
         yandex.clickSubmitButton();
 
         YandexDisk disk = new YandexDisk(driver);

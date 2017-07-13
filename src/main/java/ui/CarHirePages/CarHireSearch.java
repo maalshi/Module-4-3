@@ -25,13 +25,13 @@ public class CarHireSearch extends AbstractPage {
     @FindBy(id = "pickupDate")
     WebElement startDate;
 
-    @FindBy(id = "day-2017622")
+    @FindBy(xpath = "//td[@data-enabled=\"true\"][2]")
     WebElement outboundDate;
 
     @FindBy(id = "returnDate")
     WebElement endDate;
 
-    @FindBy(id = "day-2017625")
+    @FindBy(xpath = "//td[@data-enabled=\"true\"][2]")
     WebElement inboundDate;
 
     @FindBy(id = "searchCarsFormBtn-searchcars")

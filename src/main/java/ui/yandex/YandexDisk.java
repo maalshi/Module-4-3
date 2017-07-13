@@ -93,7 +93,6 @@ public class YandexDisk extends AbstractPage {
         return this;
     }
 
-
     public YandexDisk movePictureIntoBin(WebElement picture){
         super.dragAndDrop(picture, bin);
         waitElement(By.xpath("//div[@class='notifications__text js-message']"));

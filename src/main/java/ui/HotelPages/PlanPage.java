@@ -24,7 +24,6 @@ public class PlanPage extends AbstractPage {
     public void verifyTextBookFlights(){
         waitElement(textBookFlights);
         Assert.assertEquals("Book Flights", driver.findElement(textBookFlights).getText());
-
     }
 
 }

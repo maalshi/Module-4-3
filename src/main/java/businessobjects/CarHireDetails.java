@@ -6,7 +6,15 @@ package businessobjects;
 public class CarHireDetails {
     private String city="dublin";
 
+    public CarHireDetails(String city) {
+        this.city = city;
+    }
+
     public String getCity(){
         return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }

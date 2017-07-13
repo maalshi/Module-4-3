@@ -1,3 +1,4 @@
+import businessobjects.CarHireDetails;
 import org.testng.annotations.Test;
 import ui.CarHirePages.CarHireResults;
 import ui.CarHirePages.CarHireSearch;
@@ -20,8 +21,9 @@ public class CarHireTest extends BaseTest {
                 driver.switchTo().window(winHandle);
             }
         }
+
         CarHireSearch search = new CarHireSearch(driver);
-        search.sendKeysPickUpLocation("dublin");
+        search.sendKeysPickUpLocation(new CarHireDetails("dublin"));
         winHandleBefore = driver.getWindowHandle();
         search.clickSuggestion();
         search.clickStartDate();

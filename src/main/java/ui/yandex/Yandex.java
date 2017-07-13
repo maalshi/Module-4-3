@@ -40,17 +40,7 @@ public class Yandex extends AbstractPage {
         passwordField.sendKeys(yandexLogin.getPassword());
     }
 
-   /* public void sendKeysLogin(String user_login){
-        waitElement(loginField);
-        loginField.sendKeys(user_login);
-    }
-
-    public void sendKeysPassword(String user_password){
-        passwordField.sendKeys(user_password);
-    }*/
-
     public void clickSubmitButton(){
         buttonSubmit.click();
     }
-
 }

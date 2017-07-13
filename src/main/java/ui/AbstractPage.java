@@ -17,8 +17,6 @@ public abstract class AbstractPage{
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-
-
     public void dragAndDrop(WebElement toBeDragged, WebElement target){
         new Actions(driver).dragAndDrop(toBeDragged, target).build().perform();
     }

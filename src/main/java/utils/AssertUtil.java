@@ -1,6 +1,5 @@
 package utils;
 
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.List;
@@ -22,8 +21,9 @@ public class AssertUtil {
         }
     }
 
+    //Decorator
     public static void assertEquals(String actual, String expected){
-        System.out.println("Assert that atual [" + actual + "] equals expected [" + expected + "]");
+        System.out.println("Assert that actual [" + actual + "] equals expected [" + expected + "]");
         Assert.assertEquals(actual, expected);
     }
 

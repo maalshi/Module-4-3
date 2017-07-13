@@ -12,6 +12,7 @@ import ui.AbstractPage;
  * Created by Maryia_Shynkarenka on 6/13/2017.
  */
 public class PassengerEssentialsPage extends AbstractPage {
+
     WebDriver driver;
     WebDriverWait wait;
 

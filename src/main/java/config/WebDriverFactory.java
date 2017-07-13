@@ -1,15 +1,21 @@
 package config;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-/**
- * Created by Maryia_Shynkarenka on 7/13/2017.
- */
+//Factory
 public class WebDriverFactory {
+    private WebDriver driver;
     public WebDriver getDriver(){
+
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-        return new FirefoxDriver(capabilities);
+        if(System.getProperty("browser").equals("firefox")) {
+            driver = new FirefoxDriver(DesiredCapabilities.firefox());
+        } else if(System.getProperty("browser").equals("chrome")){
+            driver = new ChromeDriver(DesiredCapabilities.chrome());
+        }
+        return new FirefoxDriver();
     }
 }

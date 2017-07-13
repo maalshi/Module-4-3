@@ -41,5 +41,4 @@ public class FlightResultsPage extends AbstractPage{
     public void assertInboundFlight(){
         Assert.assertEquals("Paris to Dublin", inboundFlight.getText());
     }
-
 }

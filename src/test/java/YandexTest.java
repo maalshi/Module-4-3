@@ -6,20 +6,13 @@ import businessobjects.YandexLogin;
 import ui.yandex.Yandex;
 import ui.yandex.YandexDisk;
 
-/**
- * Created by Maryia_Shynkarenka on 6/21/2017.
- */
 public class YandexTest extends BaseTest {
-
-
 
     @Test
     public void trashTest() {
         driver.get("https://yandex.by");
         Yandex yandex = new Yandex(driver);
-        yandex.yandexLogin(new YandexLogin("", ""));
-       // yandex.sendKeysLogin("maria1.tester");
-       // yandex.sendKeysPassword("Password1");
+        yandex.yandexLogin(new YandexLogin("maria1.tester", "Password1"));
         yandex.clickSubmitButton();
 
         YandexDisk disk = new YandexDisk(driver);
@@ -41,5 +34,4 @@ public class YandexTest extends BaseTest {
         disk.returnToDisk();
         AssertUtil.assertListContainsElementWithSrc(pictureSrc, disk.getPictures());
     }
-
 }

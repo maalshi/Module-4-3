@@ -3,9 +3,6 @@ import ui.HotelPages.HotelPage;
 import ui.HotelPages.PlanPage;
 import ui.aerlpages.Homepage;
 
-/**
- * Created by Maryia_Shynkarenka on 6/14/2017.
- */
 public class HotelTest extends BaseTest {
 
     @Test

@@ -1,6 +1,8 @@
 package ui.CarHirePages;
 
 
+import businessobjects.CarHireDetails;
+import businessobjects.Route;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,9 +45,9 @@ public class CarHireSearch extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void sendKeysPickUpLocation(String city){
+    public void sendKeysPickUpLocation(CarHireDetails carHireDetails){
         waitElement(pickUpField);
-        pickUpField.sendKeys(city);
+        pickUpField.sendKeys(carHireDetails.getCity());
     }
 
     public void clickSuggestion(){

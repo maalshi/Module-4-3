@@ -27,4 +27,13 @@ public class AssertUtil {
         Assert.assertEquals(actual, expected);
     }
 
+    public static void assertTrue(Boolean elementPresent){
+        System.out.println("Assert that element [" + elementPresent + "] is present");
+        Assert.assertTrue(elementPresent);
+    }
+
+    public static void assertFalse(Boolean elementNotPresent){
+        System.out.println("Assert that element [" + elementNotPresent + "] is not present");
+        Assert.assertTrue(elementNotPresent);
+    }
 }

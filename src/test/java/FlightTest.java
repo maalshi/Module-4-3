@@ -4,6 +4,7 @@ import ui.aerlpages.Homepage;
 import businessobjects.Route;
 import ui.aerlpages.PassengerEssentialsPage;
 import ui.aerlpages.PaxInfoPage;
+import utils.AssertUtil;
 
 public class FlightTest extends BaseTest {
 
@@ -14,8 +15,8 @@ public class FlightTest extends BaseTest {
         homepage.setRoute(new Route("dublin","paris"));
         homepage.clickFindFlightButton();
         FlightResultsPage flightresults = new FlightResultsPage(driver);
-        flightresults.assertOutboundFlight();
-        flightresults.assertInboundFlight();
+        AssertUtil.assertEquals(flightresults.getOutboundText(), "Dublin to Paris");
+        AssertUtil.assertEquals(flightresults.getInboundText(), "Paris to Dublin");
         flightresults.clickContinue();
     }
 
@@ -35,7 +36,7 @@ public class FlightTest extends BaseTest {
     @Test (dependsOnMethods = { "search", "passengerInfo" }, alwaysRun = true)
             public void assertEssentials(){
         PassengerEssentialsPage essentials = new PassengerEssentialsPage(driver);
-        essentials.assertOutboundFlight("DUBLIN to PARIS/CDG");
-        essentials.assertInboundFlight("PARIS/CDG to DUBLIN");
+        AssertUtil.assertEquals(essentials.getTextOutboundFlight(),"DUBLIN to PARIS/CDG");
+        AssertUtil.assertEquals(essentials.getTextInboundFlight(),"PARIS/CDG to DUBLIN");
     }
 }

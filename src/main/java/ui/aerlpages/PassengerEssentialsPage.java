@@ -28,13 +28,13 @@ public class PassengerEssentialsPage extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void assertOutboundFlight(String outbound){
+    public String getTextOutboundFlight(){
         waitElement(OutboundFlight);
-        Assert.assertEquals(outbound, OutboundFlight.getText());
+        return OutboundFlight.getText();
     }
 
-    public void assertInboundFlight(String inbound){
+    public String getTextInboundFlight(){
         waitElement(InboundFlight);
-        Assert.assertEquals(inbound, InboundFlight.getText());
+        return InboundFlight.getText();
     }
 }

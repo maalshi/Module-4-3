@@ -33,12 +33,13 @@ public class FlightResultsPage extends AbstractPage{
         continueButton.click();
     }
 
-    public void assertOutboundFlight(){
+    public String getOutboundText(){
         waitElement(continueButton);
-        Assert.assertEquals("Dublin to Paris", outboundFlight.getText());
+        return outboundFlight.getText();
     }
 
-    public void assertInboundFlight(){
-        Assert.assertEquals("Paris to Dublin", inboundFlight.getText());
+    public String getInboundText(){
+        waitElement(continueButton);
+        return inboundFlight.getText();
     }
 }

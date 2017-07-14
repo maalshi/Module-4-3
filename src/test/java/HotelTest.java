@@ -2,6 +2,7 @@ import org.testng.annotations.Test;
 import ui.HotelPages.HotelPage;
 import ui.HotelPages.PlanPage;
 import ui.aerlpages.Homepage;
+import utils.AssertUtil;
 
 public class HotelTest extends BaseTest {
 
@@ -27,7 +28,7 @@ public class HotelTest extends BaseTest {
         hotelPage.verifyWereChangingText();
         hotelPage.clickButtonSearchFlights();
         PlanPage planPage = new PlanPage(driver);
-        planPage.verifyTextBookFlights();
+        AssertUtil.assertEquals(planPage.verifyTextBookFlights(), "Plan Page");
     }
 }
 

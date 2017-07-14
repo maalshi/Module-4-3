@@ -33,10 +33,12 @@ public abstract class AbstractPage{
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
     }
     public void waitHighlightAndClickElement(By locator){
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(locator)));
         ((JavascriptExecutor)driver).executeScript("arguments[0].style.backgroundColor='red'", driver.findElement(locator));
     }
 
     public void waitHighlightAndClickElement(WebElement element){
+        wait.until(ExpectedConditions.elementToBeClickable(element));
         ((JavascriptExecutor)driver).executeScript("arguments[0].style.backgroundColor='red'", element);
     }
 

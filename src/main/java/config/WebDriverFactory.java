@@ -10,7 +10,7 @@ public class WebDriverFactory {
         public WebDriver getDriver(){
 
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-        if(System.getProperty("browser").equals("firefox")) {
+            if(System.getProperty("browser") != null && System.getProperty("browser").equals("firefox")) {
             return new FirefoxDriver(DesiredCapabilities.firefox());
         } else if(System.getProperty("browser").equals("chrome")){
             return new ChromeDriver(DesiredCapabilities.chrome());

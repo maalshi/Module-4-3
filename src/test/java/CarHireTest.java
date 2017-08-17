@@ -25,7 +25,7 @@ public class CarHireTest extends BaseTest {
 
         CarHireSearch search = new CarHireSearch(driver);
         search.sendKeysPickUpLocation(new CarHireDetails("dublin"));
-        winHandleBefore = driver.getWindowHandle();
+        //winHandleBefore = driver.getWindowHandle();
         search.clickSuggestion();
         search.clickStartDate();
         search.clickOutboiundDate();

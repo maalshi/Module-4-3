@@ -60,8 +60,6 @@ public class HotelPage extends AbstractPage {
     }
 
     public void clickButtonSearchFlights(){
-        waitElement(wereChangingText);
-        buttonSearchFlights.click();
-
+        clickWebElement(buttonSearchFlights);
     }
 }

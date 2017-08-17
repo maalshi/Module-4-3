@@ -41,6 +41,6 @@ public class CarHireResults extends AbstractPage{
 
     public String getInboundAirportText(){
         waitElement(inboundAirport);
-         return inboundAirport.getText() ;
+        return inboundAirport.getText() ;
     }
 }

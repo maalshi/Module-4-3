@@ -45,5 +45,15 @@ public abstract class AbstractPage{
     public void waitForElementInvisible(By locator){
         wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
+
+    public void clickWebElement (WebElement element){
+        waitElement(element);
+        element.click();
+    }
+
+    public void clickElementByLocator (By locator){
+        waitElement(driver.findElement(locator));
+        driver.findElement(locator).click();
+    }
 }
 

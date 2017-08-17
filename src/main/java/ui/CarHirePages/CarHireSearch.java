@@ -51,32 +51,26 @@ public class CarHireSearch extends AbstractPage {
     }
 
     public void clickSuggestion(){
-        waitElement(suggestion);
-        suggestion.click();
+       clickWebElement(suggestion);
     }
 
     public void clickStartDate(){
-        waitElement(startDate);
-        startDate.click();
+        clickWebElement(startDate);
     }
 
     public void clickOutboiundDate(){
-        waitElement(outboundDate);
-        outboundDate.click();
+       clickWebElement(outboundDate);
     }
 
     public void clickEndDate(){
-        waitElement(endDate);
-        endDate.click();
+        clickWebElement(endDate);
     }
 
     public void clickInboundDate(){
-        waitElement(inboundDate);
-        inboundDate.click();
+        clickWebElement(inboundDate);
     }
 
     public void clickSearchButton(){
-        waitElement(searchButton);
-        searchButton.click();
+        clickWebElement(searchButton);
     }
 }
